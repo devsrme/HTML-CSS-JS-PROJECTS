@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-gray1: rgb(233, 223, 255);
+  --color-gray2: rgb(231, 231, 231);
+  --color-dark-purple: rgb(83, 49, 156);
+  --color-black: rgb(44, 44, 44);
+  --color-light-purple: rgb(200, 175, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--color-gray1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.heading {
+  color: var(--color-dark-purple);
+}
+
+.container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 10px;
+  border-radius: 10px;
+  position: relative;
+  padding: 0 50px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.tabs p {
+  padding: 30px 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--color-light-purple);
+  cursor: pointer;
+}
+.tabs p:hover {
+  color: var(--color-dark-purple);
+}
+.tabs .active {
+  color: var(--color-dark-purple);
+  position: relative;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-gray1);
+  position: absolute;
+  left: 0;
+}
+.tabs .active::before {
+  content: '';
+  width: 200%;
+  height: 4px;
+  background-color: var(--color-dark-purple);
+  position: absolute;
+  z-index: 10;
+  bottom: -3px;
+  left: -50%;
+  border-radius: 5px;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+  width: 100%;
+}
+
+.toggle-wrapper img {
+  height: 40px;
+}
+
+.toggle-btn {
+  background-color: var(--color-dark-purple);
+  padding: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 40px;
+  display: flex;
+  gap: 20px;
+}
+.toggle-btn span {
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.toggle-btn span:first-of-type {
+  color: #fff;
+}
+.toggle-btn span:last-of-type {
+  color: #fff;
+}
+
+.toggle-active {
+  color: var(--color-dark-purple) !important;
+  background-color: #fff;
+  border-radius: 40px;
+}
+
+.session {
+  text-align: center;
+  margin: 50px 0;
+  font-weight: bold;
+}
+.session p {
+  font-size: 14px;
+  margin-bottom: 0;
+  color: var(--color-black);
+}
+.session span {
+  font-size: 55px;
+  color: var(--color-dark-purple);
+  margin-top: 0;
+}
+.description {
+  line-height: 2;
+  color: var(--color-black);
+  font-weight: 600;
+  text-align: justify;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.slider .bar {
+  width: 100%;
+  height: 15px;
+  border-radius: 20px;
+  border: 1px solid var(--color-gray1);
+}
+
+.slider .bar .progress {
+  width: 28%;
+  height: 16px;
+  border-radius: 20px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(53, 10, 74, 1) 36%,
+    rgba(83, 49, 156, 1) 100%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slider .bar .point {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: var(--color-dark-purple);
+  position: absolute;
+  top: -5px;
+  left: 26%;
+  transition: 0.3s scale ease;
+}
+.slider .bar .point:hover {
+  cursor: pointer;
+  scale: 1.15;
+}
+
+.range {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.range ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--color-dark-purple);
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+.card-wrapper .card {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 40px 90px;
+  color: var(--color-dark-purple);
+  font-weight: 700;
+  border-radius: 10px;
+  font-size: 14px;
+  position: relative;
+  transition: 0.115s ease;
+}
+
+.card-wrapper .card:hover {
+  transform: translateY(-5px);
+}
+
+.card .top .price {
+  font-size: 32px;
+  color: var(--color-black);
+  margin: 10px 0;
+}
+
+.card-wrapper hr {
+  width: 40%;
+  height: 3px;
+  margin: auto;
+  border: 1px solid var(--color-light-purple);
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.card .bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card .bottom button {
+  background-color: var(--color-dark-purple);
+  border: none;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 10px;
+  width: 70%;
+  margin: auto;
+  cursor: pointer;
+  transition: 0.115s ease;
+}
+.card .bottom button:hover {
+  scale: 1.115;
+}
+
+.card-heading {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(53, 10, 74, 1) 36%,
+    rgba(83, 49, 156, 1) 100%
+  );
+  color: #fff;
+  padding: 3px 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
